@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get install --yes curl zip unzip libnss3
+
 ####
 # Chromium Latest Binary URLs
 # Courtsey : https://github.com/scheib/chromium-latest-linux/
@@ -8,8 +10,6 @@ LASTCHANGE_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browse
 REVISION=$(curl -s -S $LASTCHANGE_URL)
 ZIP_URL="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F$REVISION%2Fchrome-linux.zip?alt=media"
 ZIP_FILE="${REVISION}-chrome-linux.zip"
-
-apt-get install --yes curl zip unzip libnss3
 
 echo "Fetching $ZIP_URL"
 curl -# $ZIP_URL > $ZIP_FILE
