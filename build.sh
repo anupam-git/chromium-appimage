@@ -22,7 +22,6 @@ patchelf --set-rpath '$ORIGIN' chrome-linux/libEGL.so
 wget "https://github.com/azubieta/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
 chmod a+x linuxdeployqt-continuous-x86_64.AppImage
 
-LINUX_DEPLOY_QT_EXCLUDE_COPYRIGHTS=true ARCH=x86_64 appimage-wrapper linuxdeployqt-continuous-x86_64.AppImagechrome-linux/chromium-browser.desktop -appimage
-
+LINUX_DEPLOY_QT_EXCLUDE_COPYRIGHTS=true ARCH=x86_64 appimage-wrapper linuxdeployqt-continuous-x86_64.AppImage chrome-linux/chromium-browser.desktop -appimage
 
 curl --upload-file ./Chromium*.AppImage https://transfer.sh/Chromium.AppImage
