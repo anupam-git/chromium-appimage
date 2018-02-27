@@ -24,4 +24,9 @@ chmod a+x linuxdeployqt-continuous-x86_64.AppImage
 
 LINUX_DEPLOY_QT_EXCLUDE_COPYRIGHTS=true ARCH=x86_64 appimage-wrapper linuxdeployqt-continuous-x86_64.AppImage ./chrome-linux/chromium-browser.desktop -appimage
 
+ls
+
+echo "################################################"
+echo "Uploading to transfer.sh"
+
 curl --upload-file ./Chromium_Web_Browser-x86_64.AppImage https://transfer.sh/Chromium_Web_Browser-x86_64.AppImage
