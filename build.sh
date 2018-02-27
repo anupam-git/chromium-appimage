@@ -17,11 +17,11 @@ echo "Extracting..."
 unzip $ZIP_FILE
 
 cp chromium-browser.desktop ./chrome-linux/
-patchelf --set-rpath '$ORIGIN' chrome-linux/libEGL.so
+patchelf --set-rpath '$ORIGIN' ./chrome-linux/libEGL.so
 
 wget "https://github.com/azubieta/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
 chmod a+x linuxdeployqt-continuous-x86_64.AppImage
 
-LINUX_DEPLOY_QT_EXCLUDE_COPYRIGHTS=true ARCH=x86_64 appimage-wrapper linuxdeployqt-continuous-x86_64.AppImage chrome-linux/chromium-browser.desktop -appimage
+LINUX_DEPLOY_QT_EXCLUDE_COPYRIGHTS=true ARCH=x86_64 appimage-wrapper linuxdeployqt-continuous-x86_64.AppImage ./chrome-linux/chromium-browser.desktop -appimage
 
-curl --upload-file ./Chromium*.AppImage https://transfer.sh/Chromium.AppImage
+curl --upload-file ./Chromium_Web_Browser-x86_64.AppImage https://transfer.sh/Chromium_Web_Browser-x86_64.AppImage
