@@ -33,7 +33,3 @@ mkdir -p release
 cp Chromium_Web_Browser-x86_64.AppImage release/
 md5sum Chromium_Web_Browser-x86_64.AppImage > release/MD5.txt
 curl --upload-file ./Chromium_Web_Browser-x86_64.AppImage https://transfer.sh/Chromium_Web_Browser-x86_64.AppImage > release/URL
-
-wget https://github.com/probonopd/uploadtool/raw/master/upload.sh -O u.sh
-chmod a+x ./u.sh
-./u.sh release/*
